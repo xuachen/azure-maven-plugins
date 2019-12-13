@@ -6,6 +6,7 @@
 
 package com.microsoft.azure.maven.handlers.runtime;
 
+import com.microsoft.azure.common.docker.IDockerCrendetialProvider;
 import com.microsoft.azure.common.exceptions.AzureExecutionException;
 import com.microsoft.azure.management.Azure;
 import com.microsoft.azure.management.appservice.AppServicePlan;
@@ -17,7 +18,6 @@ import com.microsoft.azure.maven.utils.AppServiceUtils;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.maven.plugin.logging.Log;
-import org.apache.maven.settings.Settings;
 
 public abstract class BaseRuntimeHandler<T extends WebAppBase> implements RuntimeHandler<T> {
 
@@ -31,11 +31,10 @@ public abstract class BaseRuntimeHandler<T extends WebAppBase> implements Runtim
     protected String servicePlanName;
     protected String servicePlanResourceGroup;
     protected Azure azure;
-    protected Settings settings;
     protected String image;
-    protected String serverId;
     protected String registryUrl;
     protected Log log;
+	protected IDockerCrendetialProvider provider;
 
     public abstract static class Builder<T extends Builder<T>> {
         protected String appName;
@@ -45,11 +44,11 @@ public abstract class BaseRuntimeHandler<T extends WebAppBase> implements Runtim
         protected String servicePlanName;
         protected String servicePlanResourceGroup;
         protected Azure azure;
-        protected Settings settings;
         protected String image;
         protected String serverId;
         protected String registryUrl;
         protected Log log;
+        protected IDockerCrendetialProvider provider;
 
         public T appName(final String value) {
             this.appName = value;
@@ -86,11 +85,6 @@ public abstract class BaseRuntimeHandler<T extends WebAppBase> implements Runtim
             return self();
         }
 
-        public T mavenSettings(final Settings value) {
-            this.settings = value;
-            return self();
-        }
-
         public T log(final Log value) {
             this.log = value;
             return self();
@@ -101,8 +95,8 @@ public abstract class BaseRuntimeHandler<T extends WebAppBase> implements Runtim
             return self();
         }
 
-        public T serverId(final String value) {
-            this.serverId = value;
+        public T DockerCrendetialProvider(final IDockerCrendetialProvider provider) {
+            this.provider = provider;
             return self();
         }
 
@@ -125,11 +119,10 @@ public abstract class BaseRuntimeHandler<T extends WebAppBase> implements Runtim
         this.servicePlanName = builder.servicePlanName;
         this.servicePlanResourceGroup = builder.servicePlanResourceGroup;
         this.azure = builder.azure;
-        this.settings = builder.settings;
         this.image = builder.image;
-        this.serverId = builder.serverId;
         this.registryUrl = builder.registryUrl;
         this.log = builder.log;
+        this.provider = builder.provider;
     }
 
     public abstract WebAppBase.DefinitionStages.WithCreate defineAppWithRuntime() throws AzureExecutionException;
@@ -149,7 +142,7 @@ public abstract class BaseRuntimeHandler<T extends WebAppBase> implements Runtim
         if (!AppServiceUtils.isEqualAppServicePlan(appServicePlan, targetAppServicePlan)) {
             changeAppServicePlan(app, targetAppServicePlan);
         }
-        return AppServiceUtils.updateAppServicePlan(targetAppServicePlan, pricingTier, log);
+        return AppServiceUtils.updateAppServicePlan(targetAppServicePlan, pricingTier);
     }
 
     protected AppServicePlan getAppServicePlan() {

@@ -46,10 +46,8 @@ public class DockerFunctionRuntimeHandler extends AbstractLinuxFunctionRuntimeHa
 
     @Override
     public FunctionApp.DefinitionStages.WithCreate defineAppWithRuntime() throws AzureExecutionException {
-        final Server server = Utils.getServer(settings, serverId);
-        final DockerImageType imageType = AppServiceUtils.getDockerImageType(image, serverId, registryUrl);
+        final DockerImageType imageType = AppServiceUtils.getDockerImageType(image, provider, registryUrl);
         checkFunctionExtensionVersion();
-        checkServerConfiguration(imageType, server);
 
         final FunctionApp.DefinitionStages.WithDockerContainerImage withDockerContainerImage = super.defineLinuxFunction();
         final FunctionApp.DefinitionStages.WithCreate result;
@@ -58,10 +56,10 @@ public class DockerFunctionRuntimeHandler extends AbstractLinuxFunctionRuntimeHa
                 result = withDockerContainerImage.withPublicDockerHubImage(image);
                 break;
             case PRIVATE_DOCKER_HUB:
-                result = withDockerContainerImage.withPrivateDockerHubImage(image).withCredentials(server.getUsername(), server.getPassword());
+                result = withDockerContainerImage.withPrivateDockerHubImage(image).withCredentials(provider.getUsername(), provider.getPassword());
                 break;
             case PRIVATE_REGISTRY:
-                result = withDockerContainerImage.withPrivateRegistryImage(image, registryUrl).withCredentials(server.getUsername(), server.getPassword());
+                result = withDockerContainerImage.withPrivateRegistryImage(image, registryUrl).withCredentials(provider.getUsername(), provider.getPassword());
                 break;
             default:
                 throw new AzureExecutionException(INVALID_DOCKER_RUNTIME);
@@ -75,27 +73,19 @@ public class DockerFunctionRuntimeHandler extends AbstractLinuxFunctionRuntimeHa
 
     @Override
     public FunctionApp.Update updateAppRuntime(FunctionApp app) throws AzureExecutionException {
-        final Server server = Utils.getServer(settings, serverId);
-        final DockerImageType imageType = AppServiceUtils.getDockerImageType(image, serverId, registryUrl);
+        final DockerImageType imageType = AppServiceUtils.getDockerImageType(image, provider, registryUrl);
         checkFunctionExtensionVersion();
-        checkServerConfiguration(imageType, server);
 
         final FunctionApp.Update update = app.update();
         switch (imageType) {
             case PUBLIC_DOCKER_HUB:
                 return update.withPublicDockerHubImage(image);
             case PRIVATE_DOCKER_HUB:
-                return update.withPrivateDockerHubImage(image).withCredentials(server.getUsername(), server.getPassword());
+                return update.withPrivateDockerHubImage(image).withCredentials(provider.getUsername(), provider.getPassword());
             case PRIVATE_REGISTRY:
-                return update.withPrivateRegistryImage(image, registryUrl).withCredentials(server.getUsername(), server.getPassword());
+                return update.withPrivateRegistryImage(image, registryUrl).withCredentials(provider.getUsername(), provider.getPassword());
             default:
                 throw new AzureExecutionException(INVALID_DOCKER_RUNTIME);
-        }
-    }
-
-    protected void checkServerConfiguration(DockerImageType imageType, Server server) throws AzureExecutionException {
-        if (imageType != PUBLIC_DOCKER_HUB) {
-            assureServerExist(server, serverId);
         }
     }
 

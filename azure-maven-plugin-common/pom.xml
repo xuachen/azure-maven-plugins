@@ -14,17 +14,17 @@
     <packaging>jar</packaging>
     <name>Azure Maven Plugin Common Library</name>
     <description>Common
-	 library for Azure Maven Plugins</description>
+     library for Azure Maven Plugins</description>
     <url>https://github.com/microsoft/azure-maven-plugins</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <azure-tools-common.version>0.1.0-SNAPSHOT</azure-tools-common.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.version>3.3.3</maven.version>
         <junit.version>4.12</junit.version>
-        <jansi.version>1.17.1</jansi.version>
         <azure.ai.version>2.5.1-BETA</azure.ai.version>
         <jaxb.version>2.3.2</jaxb.version>
         <surefire.version>2.22.0</surefire.version>
@@ -74,6 +74,11 @@
 
     <dependencies>
         <dependency>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>azure-tools-common</artifactId>
+			<version>${azure-tools-common.version}</version>
+		</dependency>
+        <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-core</artifactId>
             <version>${maven.version}</version>
@@ -115,16 +120,6 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.9</version>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.8.5</version>
-        </dependency>
-        <dependency>
-            <groupId>org.fusesource.jansi</groupId>
-            <artifactId>jansi</artifactId>
-            <version>${jansi.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.java-json-tools</groupId>

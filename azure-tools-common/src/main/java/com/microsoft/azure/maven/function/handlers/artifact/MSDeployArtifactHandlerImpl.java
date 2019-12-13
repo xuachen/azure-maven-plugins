@@ -6,6 +6,7 @@
 
 package com.microsoft.azure.maven.function.handlers.artifact;
 
+import com.microsoft.azure.common.logging.Log;
 import com.microsoft.azure.maven.deploytarget.DeployTarget;
 import com.microsoft.azure.maven.function.AzureStorageHelper;
 import com.microsoft.azure.maven.function.Constants;
@@ -13,10 +14,11 @@ import com.microsoft.azure.maven.handlers.artifact.ArtifactHandlerBase;
 import com.microsoft.azure.storage.CloudStorageAccount;
 import com.microsoft.azure.storage.blob.CloudBlockBlob;
 
-import javax.annotation.Nonnull;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import javax.annotation.Nonnull;
 
 public class MSDeployArtifactHandlerImpl extends ArtifactHandlerBase {
     public static final String DEPLOYMENT_PACKAGE_CONTAINER = "java-functions-deployment-packages";
@@ -70,21 +72,15 @@ public class MSDeployArtifactHandlerImpl extends ArtifactHandlerBase {
     }
 
     protected void logInfo(final String message) {
-        if (log != null) {
-            log.info(message);
-        }
+        Log.info(message);
     }
 
     protected void logDebug(final String message) {
-        if (log != null) {
-            log.debug(message);
-        }
+        Log.debug(message);
     }
 
     protected void logError(final String message) {
-        if (log != null) {
-            log.error(message);
-        }
+        Log.error(message);
     }
 
     protected File createZipPackage() throws Exception {

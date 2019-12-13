@@ -37,13 +37,11 @@ public class PrivateRegistryRuntimeHandlerImpl extends WebAppRuntimeHandler {
 
     @Override
     public WebApp.DefinitionStages.WithCreate defineAppWithRuntime() throws AzureExecutionException {
-        final Server server = Utils.getServer(settings, serverId);
-        assureServerExist(server, serverId);
 
         final AppServicePlan plan = createOrGetAppServicePlan();
         return WebAppUtils.defineLinuxApp(resourceGroup, appName, azure, plan)
             .withPrivateRegistryImage(image, registryUrl)
-            .withCredentials(server.getUsername(), server.getPassword());
+            .withCredentials(provider.getUsername(), provider.getPassword());
     }
 
     @Override
@@ -51,11 +49,9 @@ public class PrivateRegistryRuntimeHandlerImpl extends WebAppRuntimeHandler {
         WebAppUtils.assureLinuxWebApp(app);
         WebAppUtils.clearTags(app);
 
-        final Server server = Utils.getServer(settings, serverId);
-        assureServerExist(server, serverId);
         return app.update()
             .withPrivateRegistryImage(image, registryUrl)
-            .withCredentials(server.getUsername(), server.getPassword());
+            .withCredentials(provider.getUsername(),provider.getPassword());
     }
 
     @Override

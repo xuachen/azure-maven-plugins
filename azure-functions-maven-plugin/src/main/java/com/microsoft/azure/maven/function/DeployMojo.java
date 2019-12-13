@@ -18,6 +18,7 @@ import com.microsoft.azure.maven.appservice.DeploymentType;
 import com.microsoft.azure.maven.appservice.OperatingSystemEnum;
 import com.microsoft.azure.maven.auth.AzureAuthFailureException;
 import com.microsoft.azure.maven.deploytarget.DeployTarget;
+import com.microsoft.azure.maven.docker.MavenSettingCrendetialProvider;
 import com.microsoft.azure.maven.function.configurations.RuntimeConfiguration;
 import com.microsoft.azure.maven.function.handlers.artifact.DockerArtifactHandler;
 import com.microsoft.azure.maven.function.handlers.artifact.MSDeployArtifactHandlerImpl;
@@ -162,7 +163,7 @@ public class DeployMojo extends AbstractFunctionMojo {
                 final RuntimeConfiguration runtime = this.getRuntime();
                 builder = new DockerFunctionRuntimeHandler.Builder()
                         .image(runtime.getImage())
-                        .serverId(runtime.getServerId())
+                        .DockerCrendetialProvider(new MavenSettingCrendetialProvider(settings, runtime.getServerId()))
                         .registryUrl(runtime.getRegistryUrl());
                 break;
             default:
@@ -177,7 +178,6 @@ public class DeployMojo extends AbstractFunctionMojo {
                 .servicePlanResourceGroup(getAppServicePlanResourceGroup())
                 .functionExtensionVersion(getFunctionExtensionVersion())
                 .azure(getAzureClient())
-                .mavenSettings(getSettings())
                 .log(getLog())
                 .build();
     }

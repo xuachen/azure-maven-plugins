@@ -90,7 +90,7 @@ public class WebAppUtilsTest {
 
     @Test
     public void getDockerImageType() {
-        assertEquals(DockerImageType.NONE, AppServiceUtils.getDockerImageType("", "", ""));
+        assertEquals(DockerImageType.NONE, AppServiceUtils.getDockerImageType("", null, ""));
 
         assertEquals(DockerImageType.PUBLIC_DOCKER_HUB, AppServiceUtils.getDockerImageType("imageName",
             "", ""));

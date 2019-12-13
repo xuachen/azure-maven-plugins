@@ -13,6 +13,7 @@ import com.microsoft.azure.management.appservice.WebContainer;
 import com.microsoft.azure.maven.AbstractAppServiceMojo;
 import com.microsoft.azure.maven.appservice.DockerImageType;
 import com.microsoft.azure.maven.auth.AzureAuthFailureException;
+import com.microsoft.azure.maven.docker.MavenSettingCrendetialProvider;
 import com.microsoft.azure.maven.utils.AppServiceUtils;
 import com.microsoft.azure.maven.webapp.configuration.ContainerSetting;
 import com.microsoft.azure.maven.webapp.configuration.Deployment;
@@ -400,8 +401,9 @@ public abstract class AbstractWebAppMojo extends AbstractAppServiceMojo {
             return map;
         }
         if (webAppConfig.getImage() != null) {
+            MavenSettingCrendetialProvider provider = new MavenSettingCrendetialProvider(webAppConfig.getMavenSettings(), webAppConfig.getServerId());
             final String imageType = AppServiceUtils.getDockerImageType(webAppConfig.getImage(),
-                webAppConfig.getServerId(), webAppConfig.getRegistryUrl()).toString();
+                    provider, webAppConfig.getRegistryUrl()).toString();
             map.put(DOCKER_IMAGE_TYPE_KEY, imageType);
         } else {
             map.put(DOCKER_IMAGE_TYPE_KEY, DockerImageType.NONE.toString());

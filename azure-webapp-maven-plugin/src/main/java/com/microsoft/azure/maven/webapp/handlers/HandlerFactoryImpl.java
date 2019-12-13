@@ -10,6 +10,7 @@ import com.microsoft.azure.common.exceptions.AzureExecutionException;
 import com.microsoft.azure.management.Azure;
 import com.microsoft.azure.maven.appservice.DeploymentType;
 import com.microsoft.azure.maven.appservice.DockerImageType;
+import com.microsoft.azure.maven.docker.MavenSettingCrendetialProvider;
 import com.microsoft.azure.maven.handlers.ArtifactHandler;
 import com.microsoft.azure.maven.handlers.RuntimeHandler;
 import com.microsoft.azure.maven.handlers.artifact.ArtifactHandlerBase;
@@ -75,23 +76,24 @@ public class HandlerFactoryImpl extends HandlerFactory {
     protected WebAppRuntimeHandler.Builder getDockerRuntimeHandlerBuilder(final WebAppConfiguration config)
         throws AzureExecutionException {
 
+        MavenSettingCrendetialProvider provider = new MavenSettingCrendetialProvider(config.getMavenSettings(), config.getServerId());
         final WebAppRuntimeHandler.Builder<? extends WebAppRuntimeHandler.Builder> builder;
-        final DockerImageType imageType = AppServiceUtils.getDockerImageType(config.getImage(), config.getServerId(),
+        final DockerImageType imageType = AppServiceUtils.getDockerImageType(config.getImage(), provider,
             config.getRegistryUrl());
         switch (imageType) {
             case PUBLIC_DOCKER_HUB:
                 builder = new PublicDockerHubRuntimeHandlerImpl.Builder();
                 break;
             case PRIVATE_DOCKER_HUB:
-                builder = new PrivateDockerHubRuntimeHandlerImpl.Builder().mavenSettings(config.getMavenSettings());
+                builder = new PrivateDockerHubRuntimeHandlerImpl.Builder().DockerCrendetialProvider(provider);
                 break;
             case PRIVATE_REGISTRY:
-                builder = new PrivateRegistryRuntimeHandlerImpl.Builder().mavenSettings(config.getMavenSettings());
+                builder = new PrivateRegistryRuntimeHandlerImpl.Builder().DockerCrendetialProvider(provider);
                 break;
             default:
                 throw new AzureExecutionException("Invalid docker runtime configured.");
         }
-        builder.image(config.getImage()).serverId(config.getServerId()).registryUrl(config.getRegistryUrl());
+        builder.image(config.getImage()).registryUrl(config.getRegistryUrl());
         return builder;
     }
 
