@@ -26,15 +26,15 @@
         <maven.version>3.3.3</maven.version>
         <maven.filtering.version>3.0.0</maven.filtering.version>
         <maven.plugin-tools.version>3.2</maven.plugin-tools.version>
-        <codehaus.plexus-utils>3.0.20</codehaus.plexus-utils>
-        <azure.version>1.30.0</azure.version>
-        <azure.ai.version>2.5.1</azure.ai.version>
+        <codehaus.plexus-utils>3.3.0</codehaus.plexus-utils>
+        <azure.version>1.33.1</azure.version>
+        <azure.ai.version>2.6.1-BETA</azure.ai.version>
         <common-net.version>3.6</common-net.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13</junit.version>
         <mockito.version>2.22.0</mockito.version>
-        <powermock.version>2.0.2</powermock.version>
+        <powermock.version>2.0.7</powermock.version>
         <jaxb.version>2.3.2</jaxb.version>
-        <zeroturnaround.zip.version>1.13</zeroturnaround.zip.version>
+        <zeroturnaround.zip.version>1.14</zeroturnaround.zip.version>
         <azure.auth.helper.version>0.4.0</azure.auth.helper.version>
         <azure-tools-common.version>0.3.0-SNAPSHOT</azure-tools-common.version>
     </properties>
@@ -78,7 +78,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-collections4</artifactId>
-            <version>4.2</version>
+            <version>4.4</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
@@ -161,7 +161,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.29</version>
+            <version>1.7.30</version>
         </dependency>
 
         <!-- JAXB For Application Insight Issue -->

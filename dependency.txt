@@ -1,0 +1,320 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Build Order:
+[INFO] 
+[INFO] maven-plugins-build-tools                                          [jar]
+[INFO] Maven Plugins for Azure                                            [pom]
+[INFO] Azure Authentication Library                                       [jar]
+[INFO] azure-tools-common                                                 [jar]
+[INFO] Azure Maven Plugin Library                                         [jar]
+[INFO] Azure Maven Plugin Common Library                                  [jar]
+[INFO] Maven Plugin for Azure Web Apps                           [maven-plugin]
+[INFO] Maven Plugin for Azure Functions                          [maven-plugin]
+[INFO] Maven Plugin for Service Fabric Mesh                      [maven-plugin]
+[INFO] Azure Plugin                                              [maven-plugin]
+[INFO] Azure Spring Cloud Maven Plugin                           [maven-plugin]
+[INFO] Maven Plugins for Azure                                            [pom]
+[INFO] 
+[INFO] -----------< com.microsoft.azure:maven-plugins-build-tools >------------
+[INFO] Building maven-plugins-build-tools 1.0.1-SNAPSHOT                 [1/12]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:display-dependency-updates (default-cli) @ maven-plugins-build-tools ---
+[INFO] The following dependencies in pluginManagement of plugins have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] 
+[INFO] ------------< com.microsoft.azure:azure-maven-plugins-pom >-------------
+[INFO] Building Maven Plugins for Azure 1.0.4-SNAPSHOT                   [2/12]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:display-dependency-updates (default-cli) @ azure-maven-plugins-pom ---
+[INFO] The following dependencies in pluginManagement of plugins have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] 
+[INFO] ---------------< com.microsoft.azure:azure-auth-helper >----------------
+[INFO] Building Azure Authentication Library 0.5.0-SNAPSHOT              [3/12]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:display-dependency-updates (default-cli) @ azure-auth-helper ---
+[INFO] The following dependencies in Dependencies have newer versions:
+[INFO]   com.microsoft.azure:applicationinsights-core ..... 2.5.1 -> 2.6.1-BETA
+[INFO]   com.microsoft.azure:azure ........................... 1.30.0 -> 1.33.1
+[INFO]   com.microsoft.azure:azure-client-authentication ...... 1.6.15 -> 1.7.3
+[INFO]   junit:junit ............................................. 4.12 -> 4.13
+[INFO]   org.apache.commons:commons-lang3 ......................... 3.9 -> 3.10
+[INFO]   org.apache.httpcomponents:httpclient ................. 4.5.9 -> 4.5.12
+[INFO]   org.apache.maven:maven-compat ......................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-core ........................... 3.3.3 -> 3.6.3
+[INFO]   org.eclipse.jetty:jetty-server ..... 9.4.20.v20190813 -> 10.0.0.alpha2
+[INFO]   org.eclipse.jetty:jetty-servlet .... 9.4.20.v20190813 -> 10.0.0.alpha2
+[INFO]   org.jacoco:org.jacoco.agent ........................... 0.8.4 -> 0.8.5
+[INFO]   org.mockito:mockito-core ............................. 2.28.2 -> 3.3.3
+[INFO]   org.powermock:powermock-api-mockito2 .................. 2.0.2 -> 2.0.7
+[INFO]   org.powermock:powermock-module-javaagent .............. 2.0.2 -> 2.0.7
+[INFO]   org.powermock:powermock-module-junit4 ................. 2.0.2 -> 2.0.7
+[INFO]   org.powermock:powermock-module-junit4-rule-agent ...... 2.0.2 -> 2.0.7
+[INFO] 
+[INFO] The following dependencies in pluginManagement of plugins have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] The following dependencies in Plugin Dependencies have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] 
+[INFO] ---------------< com.microsoft.azure:azure-tools-common >---------------
+[INFO] Building azure-tools-common 0.3.0-SNAPSHOT                        [4/12]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:display-dependency-updates (default-cli) @ azure-tools-common ---
+[INFO] The following dependencies in Dependencies have newer versions:
+[INFO]   com.fasterxml.jackson.core:jackson-databind ....... 2.9.10.3 -> 2.11.0
+[INFO]   com.fasterxml.jackson.dataformat:jackson-dataformat-yaml ...
+[INFO]                                                         2.9.10 -> 2.11.0
+[INFO]   com.github.java-json-tools:json-schema-validator .... 2.2.10 -> 2.2.13
+[INFO]   com.google.code.gson:gson ............................. 2.8.5 -> 2.8.6
+[INFO]   com.microsoft.azure:azure ........................... 1.30.0 -> 1.33.1
+[INFO]   com.microsoft.azure:azure-eventhubs ................... 1.2.0 -> 3.1.1
+[INFO]   com.microsoft.azure:azure-eventhubs-eph ............... 2.0.1 -> 3.1.1
+[INFO]   com.microsoft.azure:azure-mgmt-appservice ........... 1.30.0 -> 1.33.1
+[INFO]   com.microsoft.azure.functions:azure-functions-java-library ...
+[INFO]                                                           1.3.0 -> 1.3.1
+[INFO]   junit:junit ............................................. 4.12 -> 4.13
+[INFO]   org.apache.commons:commons-lang3 ......................... 3.9 -> 3.10
+[INFO]   org.jacoco:org.jacoco.agent ........................... 0.8.4 -> 0.8.5
+[INFO]   org.mockito:mockito-core ............................. 2.22.0 -> 3.3.3
+[INFO]   org.powermock:powermock-api-mockito2 .................. 2.0.2 -> 2.0.7
+[INFO]   org.powermock:powermock-module-junit4 ................. 2.0.2 -> 2.0.7
+[INFO]   org.reflections:reflections ......................... 0.9.11 -> 0.9.12
+[INFO]   org.slf4j:slf4j-api ........................... 1.7.29 -> 2.0.0-alpha1
+[INFO]   org.springframework:spring-test ....... 4.1.6.RELEASE -> 5.2.6.RELEASE
+[INFO]   org.zeroturnaround:zt-zip ............................... 1.13 -> 1.14
+[INFO] 
+[INFO] The following dependencies in pluginManagement of plugins have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] 
+[INFO] -------------< com.microsoft.azure:azure-maven-plugin-lib >-------------
+[INFO] Building Azure Maven Plugin Library 1.2.15-SNAPSHOT               [5/12]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:display-dependency-updates (default-cli) @ azure-maven-plugin-lib ---
+[INFO] The following dependencies in Dependencies have newer versions:
+[INFO]   com.microsoft.azure:applicationinsights-core ..... 2.5.1 -> 2.6.1-BETA
+[INFO]   com.microsoft.azure:azure ........................... 1.30.0 -> 1.33.1
+[INFO]   jakarta.xml.bind:jakarta.xml.bind-api ............. 2.3.2 -> 3.0.0-RC3
+[INFO]   junit:junit ............................................. 4.12 -> 4.13
+[INFO]   org.apache.commons:commons-collections4 ................... 4.2 -> 4.4
+[INFO]   org.apache.maven:maven-core ........................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-model .......................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-plugin-api ..................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-settings ....................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven.plugin-tools:maven-plugin-annotations ...
+[INFO]                                                             3.2 -> 3.6.0
+[INFO]   org.apache.maven.shared:maven-filtering ............... 3.0.0 -> 3.1.1
+[INFO]   org.codehaus.plexus:plexus-utils ..................... 3.0.20 -> 3.3.0
+[INFO]   org.glassfish.jaxb:jaxb-runtime .................... 2.3.2 -> 3.0.0-M2
+[INFO]   org.mockito:mockito-core ............................. 2.22.0 -> 3.3.3
+[INFO]   org.powermock:powermock-api-mockito2 .................. 2.0.2 -> 2.0.7
+[INFO]   org.powermock:powermock-module-junit4 ................. 2.0.2 -> 2.0.7
+[INFO]   org.slf4j:slf4j-api ........................... 1.7.29 -> 2.0.0-alpha1
+[INFO]   org.zeroturnaround:zt-zip ............................... 1.13 -> 1.14
+[INFO] 
+[INFO] The following dependencies in pluginManagement of plugins have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] The following dependencies in Plugin Dependencies have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] 
+[INFO] -----------< com.microsoft.azure:azure-maven-plugin-common >------------
+[INFO] Building Azure Maven Plugin Common Library 0.3.0-SNAPSHOT         [6/12]
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:display-dependency-updates (default-cli) @ azure-maven-plugin-common ---
+[INFO] The following dependencies in Dependencies have newer versions:
+[INFO]   com.github.java-json-tools:json-schema-validator .... 2.2.10 -> 2.2.13
+[INFO]   com.google.code.gson:gson ............................. 2.8.5 -> 2.8.6
+[INFO]   com.google.guava:guava .......................... 28.1-jre -> 29.0-jre
+[INFO]   com.microsoft.azure:applicationinsights-core ..... 2.5.1 -> 2.6.1-BETA
+[INFO]   commons-codec:commons-codec ............................. 1.13 -> 1.14
+[INFO]   jakarta.xml.bind:jakarta.xml.bind-api ............. 2.3.2 -> 3.0.0-RC3
+[INFO]   junit:junit ............................................. 4.12 -> 4.13
+[INFO]   org.apache.commons:commons-lang3 ......................... 3.9 -> 3.10
+[INFO]   org.apache.maven:maven-core ........................... 3.3.3 -> 3.6.3
+[INFO]   org.glassfish.jaxb:jaxb-runtime .................... 2.3.2 -> 3.0.0-M2
+[INFO]   org.jacoco:org.jacoco.agent ........................... 0.8.4 -> 0.8.5
+[INFO]   org.powermock:powermock-api-mockito2 .................. 2.0.2 -> 2.0.7
+[INFO]   org.powermock:powermock-module-junit4 ................. 2.0.2 -> 2.0.7
+[INFO] 
+[INFO] The following dependencies in pluginManagement of plugins have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] The following dependencies in Plugin Dependencies have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] 
+[INFO] -----------< com.microsoft.azure:azure-webapp-maven-plugin >------------
+[INFO] Building Maven Plugin for Azure Web Apps 1.10.0-SNAPSHOT          [7/12]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in https://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:display-dependency-updates (default-cli) @ azure-webapp-maven-plugin ---
+[INFO] The following dependencies in Dependencies have newer versions:
+[INFO]   junit:junit ............................................. 4.12 -> 4.13
+[INFO]   org.apache.commons:commons-collections4 ................... 4.2 -> 4.4
+[INFO]   org.apache.maven:maven-compat ......................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-core ........................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-model .......................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-plugin-api ..................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-settings ....................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven.plugin-tools:maven-plugin-annotations ...
+[INFO]                                                             3.2 -> 3.6.0
+[INFO]   org.codehaus.plexus:plexus-utils ..................... 3.0.20 -> 3.3.0
+[INFO]   org.dom4j:dom4j ....................................... 2.0.2 -> 2.1.3
+[INFO]   org.mockito:mockito-core ............................. 2.22.0 -> 3.3.3
+[INFO]   org.springframework:spring-test ....... 4.1.6.RELEASE -> 5.2.6.RELEASE
+[INFO] 
+[INFO] The following dependencies in pluginManagement of plugins have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] The following dependencies in Plugin Dependencies have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] 
+[INFO] ----------< com.microsoft.azure:azure-functions-maven-plugin >----------
+[INFO] Building Maven Plugin for Azure Functions 1.4.2-SNAPSHOT          [8/12]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[WARNING] The POM for org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 is missing, no dependency information available
+[WARNING] Failed to retrieve plugin descriptor for org.eclipse.m2e:lifecycle-mapping:1.0.0: Plugin org.eclipse.m2e:lifecycle-mapping:1.0.0 or one of its dependencies could not be resolved: Failure to find org.eclipse.m2e:lifecycle-mapping:jar:1.0.0 in https://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:display-dependency-updates (default-cli) @ azure-functions-maven-plugin ---
+[INFO] The following dependencies in Dependencies have newer versions:
+[INFO]   com.microsoft.azure:azure-eventhubs ................... 1.2.0 -> 3.1.1
+[INFO]   com.microsoft.azure:azure-eventhubs-eph ............... 2.0.1 -> 3.1.1
+[INFO]   junit:junit ............................................. 4.12 -> 4.13
+[INFO]   org.apache.maven:maven-compat ......................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-core ........................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-model .......................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-plugin-api ..................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-settings ....................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven.plugin-tools:maven-plugin-annotations ...
+[INFO]                                                             3.2 -> 3.6.0
+[INFO]   org.codehaus.plexus:plexus-utils ..................... 3.0.20 -> 3.3.0
+[INFO]   org.jacoco:org.jacoco.agent ........................... 0.8.4 -> 0.8.5
+[INFO]   org.mockito:mockito-core ............................. 2.22.0 -> 3.3.3
+[INFO]   org.powermock:powermock-api-mockito2 .................. 2.0.2 -> 2.0.7
+[INFO]   org.powermock:powermock-module-junit4 ................. 2.0.2 -> 2.0.7
+[INFO]   org.reflections:reflections ......................... 0.9.11 -> 0.9.12
+[INFO]   org.springframework:spring-test ....... 4.1.6.RELEASE -> 5.2.6.RELEASE
+[INFO] 
+[INFO] The following dependencies in pluginManagement of plugins have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] The following dependencies in Plugin Dependencies have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] 
+[INFO] -----------< com.microsoft.azure:azure-sfmesh-maven-plugin >------------
+[INFO] Building Maven Plugin for Service Fabric Mesh 1.0.0-SNAPSHOT      [9/12]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:display-dependency-updates (default-cli) @ azure-sfmesh-maven-plugin ---
+[INFO] The following dependencies in Dependencies have newer versions:
+[INFO]   com.fasterxml.jackson.core:jackson-databind ....... 2.9.10.3 -> 2.11.0
+[INFO]   com.fasterxml.jackson.dataformat:jackson-dataformat-yaml ...
+[INFO]                                                         2.9.10 -> 2.11.0
+[INFO]   org.apache.maven:maven-core ........................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-plugin-api ..................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven.plugin-tools:maven-plugin-annotations ...
+[INFO]                                                             3.2 -> 3.6.0
+[INFO] 
+[INFO] The following dependencies in pluginManagement of plugins have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] 
+[INFO] ---------------< com.microsoft.azure:azure-maven-plugin >---------------
+[INFO] Building Azure Plugin 0.2.0-SNAPSHOT                             [10/12]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:display-dependency-updates (default-cli) @ azure-maven-plugin ---
+[INFO] The following dependencies in Dependencies have newer versions:
+[INFO]   com.microsoft.azure:azure-auth-helper ................. 0.1.0 -> 0.4.0
+[INFO]   junit:junit ............................................. 4.12 -> 4.13
+[INFO]   org.apache.maven:maven-compat ......................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-core ........................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-plugin-api ..................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven.plugin-tools:maven-plugin-annotations ...
+[INFO]                                                             3.3 -> 3.6.0
+[INFO]   org.jacoco:org.jacoco.agent ........................... 0.8.4 -> 0.8.5
+[INFO]   org.mockito:mockito-core ............................. 2.28.2 -> 3.3.3
+[INFO]   org.powermock:powermock-api-mockito2 .................. 2.0.2 -> 2.0.7
+[INFO]   org.powermock:powermock-module-javaagent .............. 2.0.2 -> 2.0.7
+[INFO]   org.powermock:powermock-module-junit4 ................. 2.0.2 -> 2.0.7
+[INFO]   org.powermock:powermock-module-junit4-rule-agent ...... 2.0.2 -> 2.0.7
+[INFO] 
+[INFO] The following dependencies in pluginManagement of plugins have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] The following dependencies in Plugin Dependencies have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] 
+[INFO] --------< com.microsoft.azure:azure-spring-cloud-maven-plugin >---------
+[INFO] Building Azure Spring Cloud Maven Plugin 1.2.0-SNAPSHOT          [11/12]
+[INFO] ----------------------------[ maven-plugin ]----------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:display-dependency-updates (default-cli) @ azure-spring-cloud-maven-plugin ---
+[INFO] The following dependencies in Dependencies have newer versions:
+[INFO]   com.github.java-json-tools:json-schema-validator .... 2.2.10 -> 2.2.13
+[INFO]   com.microsoft.azure:azure ........................... 1.24.1 -> 1.33.1
+[INFO]   com.microsoft.azure:azure-storage-blob .............. 11.0.0 -> 11.0.1
+[INFO]   junit:junit ............................................. 4.12 -> 4.13
+[INFO]   org.apache.maven:maven-artifact ....................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-compat ......................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-core ........................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven:maven-plugin-api ..................... 3.3.3 -> 3.6.3
+[INFO]   org.apache.maven.plugin-tools:maven-plugin-annotations ...
+[INFO]                                                             3.3 -> 3.6.0
+[INFO]   org.dom4j:dom4j ....................................... 2.1.1 -> 2.1.3
+[INFO]   org.jtwig:jtwig-core ................ 5.86.1.RELEASE -> 5.87.0.RELEASE
+[INFO]   org.mockito:mockito-core ............................. 2.28.2 -> 3.3.3
+[INFO]   org.powermock:powermock-api-mockito2 .................. 2.0.2 -> 2.0.7
+[INFO]   org.powermock:powermock-module-junit4 ................. 2.0.2 -> 2.0.7
+[INFO]   org.yaml:snakeyaml ...................................... 1.25 -> 1.26
+[INFO] 
+[INFO] The following dependencies in pluginManagement of plugins have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] The following dependencies in Plugin Dependencies have newer versions:
+[INFO]   com.puppycrawl.tools:checkstyle ......................... 8.29 -> 8.32
+[INFO] 
+[INFO] 
+[INFO] --------------< com.microsoft.azure:azure-maven-plugins >---------------
+[INFO] Building Maven Plugins for Azure 1.0.0-SNAPSHOT                  [12/12]
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] --- versions-maven-plugin:2.7:display-dependency-updates (default-cli) @ azure-maven-plugins ---
+[INFO] ------------------------------------------------------------------------
+[INFO] Reactor Summary:
+[INFO] 
+[INFO] maven-plugins-build-tools 1.0.1-SNAPSHOT ........... SUCCESS [  1.060 s]
+[INFO] Maven Plugins for Azure 1.0.4-SNAPSHOT ............. SUCCESS [  0.018 s]
+[INFO] Azure Authentication Library 0.5.0-SNAPSHOT ........ SUCCESS [  0.177 s]
+[INFO] azure-tools-common 0.3.0-SNAPSHOT .................. SUCCESS [  0.111 s]
+[INFO] Azure Maven Plugin Library 1.2.15-SNAPSHOT ......... SUCCESS [  0.088 s]
+[INFO] Azure Maven Plugin Common Library 0.3.0-SNAPSHOT ... SUCCESS [  0.044 s]
+[INFO] Maven Plugin for Azure Web Apps 1.10.0-SNAPSHOT .... SUCCESS [  0.067 s]
+[INFO] Maven Plugin for Azure Functions 1.4.2-SNAPSHOT .... SUCCESS [  0.057 s]
+[INFO] Maven Plugin for Service Fabric Mesh 1.0.0-SNAPSHOT  SUCCESS [  0.041 s]
+[INFO] Azure Plugin 0.2.0-SNAPSHOT ........................ SUCCESS [  0.047 s]
+[INFO] Azure Spring Cloud Maven Plugin 1.2.0-SNAPSHOT ..... SUCCESS [  0.130 s]
+[INFO] Maven Plugins for Azure 1.0.0-SNAPSHOT ............. SUCCESS [  0.008 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.463 s
+[INFO] Finished at: 2020-04-30T14:11:58+08:00
+[INFO] ------------------------------------------------------------------------
