@@ -1,5 +1,5 @@
 # Maven Plugins for Azure Services
-This repository contains all Maven plugins for Microsoft Azure services. A complete list of all plugins is shown as below. Visit our [Wiki](https://github.com/microsoft/azure-maven-plugins/wiki) for detailed documentation.
+This repository contains all Maven plugins for Microsoft Azure services. A complete list of all plugins is shown as below. Visit our [Wiki](https://github.com/microsoft/azure-maven-plugins/wiki) for detailed documentation. //comments for testing
 
 Maven Plugin | Maven Central Version | Build Status
 ---|---|---
